@@ -12,7 +12,6 @@ class Bpp extends CI_Controller
 
 	public function index()
 	{
-			
 		if($this->input->post() == NULL){
 			$data = array(
 				'title' => 'Data Buku Pokok Pemakaman',
@@ -55,5 +54,15 @@ class Bpp extends CI_Controller
 		$this->load->view('layout/footer', $data);
 	}
 
-	
+	public function cetak()
+    {
+        $data = array(
+            'title' => 'Cetak Surat Keterangan Kematian',
+            'data'  => $this->M_bpp->cetakBpp()
+        );
+
+        $this->load->view('administrator/bpp/print.php', $data);
+    }
+
+
 }

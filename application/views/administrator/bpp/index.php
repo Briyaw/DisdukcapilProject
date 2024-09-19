@@ -8,9 +8,9 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="btn-group mb-3">
-                                        <!-- <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahData">Tambah Data</button> -->
-                                        <a href="#" class="btn btn-success btn-sm">Tambah Data</a>        
+                                    <div class="mb-3 ">
+                                        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahData">Tambah Data</button>        
+                                        
                                     </div>
                             
                                     <form action="" method="POST">
@@ -30,12 +30,12 @@
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label>&nbsp;</label><br>
-                                                    <button type="submit" name="filter" class="btn btn-primary">Filter</button>   
-
+                                                    <button type="submit" name="filter" class="btn btn-primary">Filter</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </form>
+                                    
                         
                                     <div class="table-responsive overflow-auto">
                                         <table id="data-warga" class="table table-striped table-bordered text-center overflow-auto" style="width:100%">
@@ -60,7 +60,7 @@
                                                 <?php $n = 1;  
                                                     foreach ($bpp as $data) {
                                                     ?>
-                            
+                                                    
                                                     <tr>
                                                             <td><?= $n ?></td>
                                                             <td><?= $data->nomor_surat ?></td>
@@ -105,18 +105,34 @@
                                                                 </div>
 
                                                             </td>
+                                                               
 
                                                         </tr>
                                                         
+                                                        
                                                     
                                                     <?php
+                                                    $n++;
                                                     }
+                                                    ?>
+                                                    
+                                                     <?php
                                                 
-                                                $n++;
+                                                
                                                  ?>
                                             </tbody>
                                         </table>
+                                        
                                     </div>
+                                    <br>
+                                        <?php if ($n > 1) {?>      
+                                            <div>
+                                                <a  href="<?= base_url('cetak-surat-bpp/'. $data->id . '?nomor=' . $data->nomor_surat) ?>) ?>" class="btn btn-primary btn-lg " target="_blank"><i class="bi bi-printer-fill"></i></a>
+                                            </div>
+                                        <?php }
+                                        ?>
+                                  
+                                    
                                 </div>
                             </div>
 

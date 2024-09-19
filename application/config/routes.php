@@ -236,6 +236,9 @@ $route['history-surat-keterangan-pengantar'] = 'Warga/History/SuratKeteranganPen
 //cetak surat
 
 //kematian
+$route['cetak-surat-bpp/(:any)'] = 'Administrator/DataBpp/Bpp/cetak/$1';
+
+//kematian
 $route['cetak-surat-kematian/(:any)'] = 'Warga/History/SuratKematian/cetak/$1';
 
 //domisili
