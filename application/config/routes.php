@@ -84,8 +84,6 @@ $route['aksi-edit-desa/(:any)'] = 'Administrator/DataDesa/Desa/edit/$1';
 $route['detail-desa/(:any)'] = 'Administrator/DataDesa/Desa/detail/$1';
 $route['delete-desa/(:any)'] = 'Administrator/DataDesa/Desa/delete/$1';
 
-
-
 $route['data-warga'] = 'Administrator/DataWarga/Warga/index';
 $route['tambah-data-warga'] = 'Administrator/DataWarga/Warga/index_tambah';
 $route['create-warga'] = 'Administrator/DataWarga/Warga/create';
@@ -263,3 +261,9 @@ $route['hapus-surat-usaha/(:any)'] = 'Administrator/Verifikasi/SuratUsaha/hapus/
 $route['hapus-surat-tidak-mampu/(:any)'] = 'Administrator/Verifikasi/SuratTidakMampu/hapus/$1';
 $route['hapus-surat-kelahiran/(:any)'] = 'Administrator/Verifikasi/SuratKelahiran/hapus/$1';
 $route['hapus-surat-keterangan-pengantar/(:any)'] = 'Administrator/Verifikasi/SuratKeteranganPengantar/hapus/$1';
+
+//data operator
+$route['data-operator'] = 'Warga/DataOperator/Operator/index';
+$route['edit-operator/(:any)'] = 'Warga/DataOperator/Operator/index_edit/$1';
+$route['aksi-edit-operator/(:any)'] = 'Warga/DataOperator/Operator/edit/$1';
+$route['detail-operator/(:any)'] = 'Warga/DataOperator/Operator/detail/$1';

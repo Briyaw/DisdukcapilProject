@@ -284,6 +284,14 @@ if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_i
                         </a>
                     </li>
 
+                    <li class="sidebar-item  <?= $this->uri->segment(1) == 'data-operator'|| $this->uri->segment(1) == 'edit-operator' || $this->uri->segment(1) == 'detail-operator'? 'active ' : '' ?>">
+                        <a href="<?= base_url('data-operator') ?>" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+                            <span>Profil Pengguna</span>
+                        </a>
+                    </li>
+
+
 
 
 
