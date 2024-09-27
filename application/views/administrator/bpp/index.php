@@ -8,10 +8,11 @@
 
                             <div class="card">
                                 <div class="card-body">
+                                    <?php if($this->session->userdata('role_id') == 1) { ?>
                                     <div class="mb-3 ">
                                         <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahData">Tambah Data</button>        
-                                        
                                     </div>
+                                    <?php } ?>
                             
                                     <form action="" method="POST">
                                         <div class="row mb-3">

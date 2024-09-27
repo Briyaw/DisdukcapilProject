@@ -92,6 +92,15 @@ $route['aksi-edit-warga/(:any)'] = 'Administrator/DataWarga/Warga/edit/$1';
 $route['detail-warga/(:any)'] = 'Administrator/DataWarga/Warga/detail/$1';
 $route['delete-warga/(:any)'] = 'Administrator/DataWarga/Warga/delete/$1';
 
+//tambahan data operator kecamatan
+$route['oprkec/login'] = 'Auth/Kecamatan/index';
+$route['oprkec-login-proses'] = 'Auth/Kecamatan/loginKec';
+
+$route['data-kec'] = 'Administrator/Users/Kecamatan/index';
+$route['created-kec'] = 'Administrator/Users/Kecamatan/tambah';
+$route['update-kec/(:any)'] = 'Administrator/Users/Kecamatan/update/$1';
+$route['deleted-kec/(:any)'] = 'Administrator/Users/Kecamatan/deleted/$1';
+
 // data BPP
 $route['data-bpp'] = 'Administrator/DataBpp/Bpp/index';
 $route['tambah-data-bpp'] = 'Administrator/DataBpp/Bpp/index_tambah';

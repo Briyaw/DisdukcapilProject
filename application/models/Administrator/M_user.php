@@ -13,7 +13,6 @@ class M_user extends CI_Model
         return $this->db->get('users')->result();
     }
 
-
     public function updateUser($data, $id)
     {
         $this->db->where('id_users', $id);
@@ -38,4 +37,5 @@ class M_user extends CI_Model
         $this->db->where('nik', $nik);
         return $this->db->get('warga')->row_array();
     }
+
 }

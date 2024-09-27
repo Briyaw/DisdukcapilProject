@@ -21,7 +21,7 @@
         									</div>
 
                                                                                 <div class="col">
-                                                                                        <a class="btn btn-primary btn-sm font-bold text-dark" href="<?= base_url('administrator/login') ?>">Login Operator Kecamatan</a>
+                                                                                        <a class="btn btn-primary btn-sm font-bold text-dark" href="<?= base_url('oprkec/login') ?>">Login Operator Kecamatan</a>
                                                                                 </div>
         									<div class="col">
         										<a class="btn btn-warning btn-sm font-bold text-dark" href=" <?= base_url('administrator/login') ?>">Login Administrator</a>

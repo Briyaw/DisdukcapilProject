@@ -33,7 +33,7 @@ if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_i
         <div class="sidebar-menu">
             <ul class="menu">
                 <!-- <li class='sidebar-title'>Main Menu</li> -->
-                <?php if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_id') == 2 || $this->session->userdata('role_id') == 3) { ?>
+                <?php if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_id') == 2 || $this->session->userdata('role_id') == 3 || $this->session->userdata('role_id') == 4) { ?>
                     <li class="sidebar-item <?= $this->uri->segment(1) == 'dashboard' ? 'active ' : '' ?>">
                         <a href="<?= base_url('dashboard') ?>" class='sidebar-link'>
                             <i class="bi bi-speedometer"></i>
@@ -113,6 +113,13 @@ if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_i
                         </a>
                     </li>
 
+                    <li class="sidebar-item  <?= $this->uri->segment(1) == 'data-kec'  ? 'active ' : '' ?>">
+                        <a href="<?= base_url('data-kec') ?>" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+                            <span>Data Operator Kecamatan</span>
+                        </a>
+                    </li>
+
                     <li class="sidebar-item  <?= $this->uri->segment(1) == 'data-bpp' || $this->uri->segment(1) == 'tambah-data-bpp' || $this->uri->segment(1) == 'edit-bpp' || $this->uri->segment(1) == 'detail-bpp' ? 'active ' : '' ?>">
                         <a href="<?= base_url('data-bpp') ?>" class='sidebar-link'>
                             <i class="bi bi-people-fill"></i>
@@ -127,7 +134,7 @@ if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_i
                         </a>
                     </li>
 
-
+                    
                     <li class="sidebar-item  <?= $this->uri->segment(1) == 'data-users' ? 'active ' : '' ?>">
                         <a href="<?= base_url('data-users') ?>" class='sidebar-link'>
                             <i class="bi bi-person-lines-fill"></i>
@@ -291,30 +298,14 @@ if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_i
                         </a>
                     </li>
 
-
-
-
-
-
-
                 <?php } else if ($this->session->userdata('role_id') == 4) {  ?>
-                    <li class="sidebar-item  <?= $this->uri->segment(1) == 'list-surat' ? 'active' : '' ?>">
-                        <a href="<?= base_url('list-surat') ?>" class='sidebar-link'>
-                            <i class="bi bi-envelope-plus-fill"></i>
-                            <span>Pelayanan Surat</span>
+                    
+                    <li class="sidebar-item  <?= $this->uri->segment(1) == 'data-bpp' || $this->uri->segment(1) == 'tambah-data-bpp' || $this->uri->segment(1) == 'edit-bpp' || $this->uri->segment(1) == 'detail-bpp' ? 'active ' : '' ?>">
+                        <a href="<?= base_url('data-bpp') ?>" class='sidebar-link'>
+                            <i class="bi bi-people-fill"></i>
+                            <span>Data Buku Pokok Pemakaman</span>
                         </a>
                     </li>
-                    <li class="sidebar-item  <?= $this->uri->segment(1) == 'histori-surat' ? 'active' : '' ?>">
-                        <a href="<?= base_url('histori-surat') ?>" class='sidebar-link'>
-                            <i class="bi bi-clock-history"></i>
-                            <span>Surat</span>
-                            <span class="badge badge bg-danger text-white"><?= $all ?></span>
-                        </a>
-                    </li>
-
-
-
-
                     
                 <?php } ?>
 

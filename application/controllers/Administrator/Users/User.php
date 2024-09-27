@@ -65,6 +65,7 @@ class User extends CI_Controller
 			//cek nik apakah ada di data penduduk atau tidak
 			//query untuk cek data
 			$ceknik = $this->M_user->cekNik($nik);
+			
 			if (!$ceknik['nik']) {
 				$this->session->set_flashdata('danger', 'Maaf, NIK tidak terdaftar !');
 				redirect('data-users');
@@ -75,9 +76,11 @@ class User extends CI_Controller
 					'password' => password_hash($password, PASSWORD_DEFAULT),
 					'created_at'    => date('Y-m-d H:i:s')
 				);
+
 				$this->M_user->created($data);
-				$this->session->set_flashdata('success', 'Data berhasil disimpan !');
-				redirect('data-users');
+					$this->session->set_flashdata('success', 'Data berhasil disimpan !');
+					redirect('data-users');
+			
 			}
 		}
 	}

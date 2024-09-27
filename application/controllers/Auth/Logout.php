@@ -20,5 +20,9 @@ class Logout extends CI_Controller
 			session_destroy();
 			redirect('user/login', 'refresh');
 		}
+		if ($this->session->userdata('role_id') == 4) {
+			session_destroy();
+			redirect('oprkec/login', 'refresh');
+		}
 	}
 }
