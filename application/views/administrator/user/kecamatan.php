@@ -141,11 +141,7 @@
                                                         <td><?= $oprkec->kecamatan ?></td>
                                                         <td><?= $oprkec->desa ?></td>
                                                         <td><?= $oprkec->jekel ?></td>
-                                                        <td>
-                                                            <?php
-                                                                echo '<span class="badge bg-success">Operator Kecamatan</span>';
-                                                            ?>
-                                                        </td>
+                                            
                                                     </tr>
                                                 <?php $n++;
                                                 } ?>

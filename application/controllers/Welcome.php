@@ -30,6 +30,7 @@ class Welcome extends CI_Controller
 			'title'	=> 'Dashboard',
 			'users'	=> $this->M_count->cUsers(),
 			'warga'	=> $this->M_count->cWarga(),
+			'oprkec'=> $this->M_count->cKec(),
 			'psd'	=> $this->M_count->dPsd(),
 			'sk'	=> $this->M_count->dPsk(),
 			'kk'	=> $this->M_count->dPkk(),

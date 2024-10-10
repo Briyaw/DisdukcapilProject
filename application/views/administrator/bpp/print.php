@@ -28,10 +28,10 @@
                                 <h1 style='text-transform:uppercase; font-size:18px' class="ms-5">Buku Pokok Pemakaman</h3>
                                 <div class="row justify-content-md-center">
                                     <div class="col-lg-2">
-                                        <h2 style='text-transform:uppercase; font-size:12px' class="ms-5">Bulan :</h6>
+                                        <h2 style='text-transform:uppercase; font-size:12px' class="ms-5">Dari : </h6>
                                     </div>
                                     <div class="col-lg-2">
-                                        <h2  style='text-transform:uppercase; font-size:12px' class="ms-5">Tahun : </h6>    
+                                        <h2  style='text-transform:uppercase; font-size:12px' class="ms-5">Sampai : </h6>    
                                     </div>
                                 </div>
                             </center>
@@ -48,7 +48,7 @@
             <div class ="ukuranfont">
                 <div>
                     <div>
-                        Desa / Kel : <?= $d->desa?>
+                        Desa : <?= $d->desa?>
                     </div>
                     <div>
                         Kecamatan : <?= $d->kecamatan ?>

@@ -45,7 +45,7 @@
             												<a href="<?= base_url('preview-skk/' . $data->id) ?>"><span class="badge bg-info">Preview Data</span></a>
             											</td>
             											<td>
-            												<?php if ($this->session->userdata('role_id') == 1 || $this->session->userdata('role_id') == 3) { ?>
+            												<?php if ($this->session->userdata('role_id') == 1 ) {  ?>
             													<?php if ($data->status == 'Menunggu Verifikasi') { ?>
             														<div class="btn-group">
             															<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#tambahKomentar<?= $data->id ?>">Komentar</button>
@@ -104,8 +104,7 @@
             															</div>
             														</div>
             													</div>
-
-            												<?php } else if ($this->session->userdata('role_id') == 2 || $this->session->userdata('role_id') == 3) { ?>
+															<?php } else if ($this->session->userdata('role_id') == 2) { ?>
             													<?php if ($data->status == 'Menunggu Verifikasi') { ?>
             														<small class="text-center text-danger font-bold">No Action</small>
             													<?php } else if ($data->status == 'Terverifikasi') { ?>
@@ -123,6 +122,22 @@
             																<input type="hidden" name="status" value="Ditolak" class="form-control" readonly>
             																<button class="btn btn-<?= $data->status == 'Ditolak' ? 'danger' : 'light' ?> btn-sm" type="submit">Tolak</button>
             															</form>
+            														</div>
+            													<?php } else if ($data->status == 'Diterima') { ?>
+            														<div class="btn-group">
+            															<a href="<?= base_url('cetak-surat-kematian/' . $data->id . '?nomor=' . $data->nomor_surat) ?>" class="btn btn-primary btn-sm" target="blank_"><i class="bi bi-printer-fill"></i></a>
+            														</div>
+            													<?php } else if ($data->status == 'Ditolak') { ?>
+            														<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#tambahKomentar<?= $data->id ?>">Komentar</button>
+
+            													<?php } ?>
+
+            												<?php } else if ($this->session->userdata('role_id') == 3) { ?>
+            													<?php if ($data->status == 'Menunggu Verifikasi') { ?>
+            														<small class="text-center text-danger font-bold">No Action</small>
+            													<?php } else if ($data->status == 'Terverifikasi') { ?>
+            														<div class="btn-group">
+            															<button class="btn btn-info btn-sm" data-toggle="modal" data-target="#tambahKomentar<?= $data->id ?>">Komentar</button>
             														</div>
             													<?php } else if ($data->status == 'Diterima') { ?>
             														<div class="btn-group">

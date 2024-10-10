@@ -10,6 +10,10 @@ class M_count extends CI_Model
     {
         return $this->db->get('warga')->num_rows();
     }
+    public function cKec()
+    {
+        return $this->db->get('oprkec')->num_rows();
+    }
     //jmlh permohonan
     public function dPsd()
     {

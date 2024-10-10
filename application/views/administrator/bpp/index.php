@@ -8,15 +8,15 @@
 
                             <div class="card">
                                 <div class="card-body">
-                                    <?php if($this->session->userdata('role_id') == 1) { ?>
+                                    <?php /*if($this->session->userdata('role_id') == 1) { ?>
                                     <div class="mb-3 ">
                                         <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahData">Tambah Data</button>        
                                     </div>
-                                    <?php } ?>
+                                    <?php } */?>
                             
                                     <form action="" method="POST">
                                         <div class="row mb-3">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label>Tanggal Meninggal Dari</label>
                                                     <input type="date" name="from_date" value="" class="form-control">
@@ -28,6 +28,22 @@
                                                     <input type="date" name="to_date" value="" class="form-control">
                                                 </div>
                                             </div>
+                                            <?php if($this->session->userdata('role_id') != 4){ ?>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>Kecamatan</label>
+                                                        <input type="text" name="kec" value="" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <div class="form-group">
+                                                        <label>Desa</label>
+                                                        <input type="text" name="des" value="" class="form-control">
+                                                    </div>
+                                                </div>
+                                            <?php } ?>
+                                            
+                                            
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label>&nbsp;</label><br>
@@ -36,6 +52,7 @@
                                             </div>
                                         </div>
                                     </form>
+                                    
                                     
                         
                                     <div class="table-responsive overflow-auto">
@@ -126,10 +143,26 @@
                                         
                                     </div>
                                     <br>
-                                        <?php if ($n > 1) {?>      
-                                            <div>
-                                                <a  href="<?= base_url('cetak-surat-bpp/'. $data->id . '?nomor=' . $data->nomor_surat) ?>) ?>" class="btn btn-primary btn-lg " target="_blank"><i class="bi bi-printer-fill"></i></a>
-                                            </div>
+                                        <?php if ($n > 1) {
+                                            if($this->input->post() == NULL){ ?>
+                                             <p class="text-danger">Harap isi semua kolom yang diperlukan untuk mencetak BPP.</p>
+                                            <?php } else{ 
+                                                if($this->session->userdata('role_id') == 4){ ?>
+                                                    <div>
+                                                        <a  href="<?= base_url('cetak-surat-bpp/'. $data->id . '?nomor=' . $data->nomor_surat . '&from_date=' . $_POST['from_date'] . '&to_date=' . $_POST['to_date']) ?> " class="btn btn-primary btn-lg " target="_blank"><i class="bi bi-printer-fill"></i></a>
+                                                    </div>
+                                                <?php } 
+                                                    else{ 
+                                                    if(empty($_POST['from_date']) || empty($_POST['to_date']) || empty($_POST['kec']) || empty($_POST['des'])){ ?>
+                                                        <p class="text-danger">Harap isi semua kolom yang diperlukan.</p>
+                                                    <?php } else{ ?>
+                                                        <div>
+                                                            <a  href="<?= base_url('cetak-surat-bpp/'. $data->id . '?nomor=' . $data->nomor_surat . '&from_date=' . $_POST['from_date'] . '&to_date=' . $_POST['to_date'] . '&kec=' . $_POST['kec'] . '&des=' . $_POST['des']) ?> " class="btn btn-primary btn-lg " target="_blank"><i class="bi bi-printer-fill"></i></a>
+                                                        </div>
+                                                    <?php }                         
+                                                } 
+                                            } ?>      
+                                           
                                         <?php }
                                         ?>
                                   

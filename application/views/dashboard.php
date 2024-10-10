@@ -12,7 +12,7 @@
             						<div class="card-body p-0">
             							<div class="d-flex flex-column">
             								<div class='px-3 py-3 d-flex justify-content-between'>
-            									<h3 class='card-title'>DATA USERS</h3>
+            									<h3 class='card-title'>DATA OPR DESA</h3>
             								</div>
             								<div class="card-right d-flex align-items-center p-3">
             									<p><?= $users ?> <span>Data</span></p>
@@ -29,10 +29,10 @@
             						<div class="card-body p-0">
             							<div class="d-flex flex-column">
             								<div class='px-3 py-3 d-flex justify-content-between'>
-            									<h3 class='card-title'>DATA OPR DESA</h3>
+            									<h3 class='card-title'>DATA OPR KECAMATAN</h3>
             								</div>
             								<div class="card-right d-flex align-items-center p-3">
-            									<p><?= $warga ?> <span>Data</span></p>
+            									<p><?= $oprkec ?> <span>Data</span></p>
             								</div>
             								<!-- <div class="chart-wrapper">
                                             <canvas id="canvas2" style="height:100px !important"></canvas>
