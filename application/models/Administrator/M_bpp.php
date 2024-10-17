@@ -9,12 +9,11 @@ class M_bpp extends CI_Model
         return $this->db->get('surat_kematian')->result();
     }
 
-    public function getKecBpp($kecamatan , $desa)
+    public function getKecBpp($kecamatan)
     { 
         $this->db->order_by('id', 'DESC');
         $this->db->join('warga', 'warga.id_warga=surat_kematian.id_warga');
         $this->db->where('warga.kecamatan', $kecamatan);
-        $this->db->where('warga.desa', $desa);
         return $this->db->get('surat_kematian')->result();
     }
 
@@ -45,14 +44,13 @@ class M_bpp extends CI_Model
         }
     }
 
-    public function getDateKecBpp($from_date, $to_date, $kecamatan , $desa)
+    public function getDateKecBpp($from_date, $to_date, $kecamatan , $des)
     {
         if(($from_date == "1970-01-01") && ($to_date == "1970-01-01")){
-            
             $this->db->order_by('id', 'DESC');
             $this->db->join('warga', 'warga.id_warga=surat_kematian.id_warga');   
             $this->db->where('warga.kecamatan', $kecamatan);
-            $this->db->where('warga.desa', $desa);
+            $this->db->where('warga.desa', $des);
             return $this->db->get('surat_kematian')->result();
         }
         
@@ -62,7 +60,7 @@ class M_bpp extends CI_Model
             $this->db->where('tanggal_meninggal >=', $from_date);
             $this->db->where('tanggal_meninggal <=', $to_date);
             $this->db->where('warga.kecamatan', $kecamatan);
-            $this->db->where('warga.desa', $desa);
+            $this->db->where('warga.desa', $des);
             return $this->db->get('surat_kematian')->result();
         }
         

@@ -63,7 +63,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
+
 	</style>
+
 </head>
 <body>
 
@@ -85,5 +87,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
 
+	<script>
+		function fillDesaInput(desaName) {
+			document.querySelector('input[name="des"]').value = desaName;
+		}
+	</script>
 </body>
 </html>

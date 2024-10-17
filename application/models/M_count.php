@@ -157,4 +157,16 @@ class M_count extends CI_Model
         $query = $this->db->query("SELECT COUNT(*) AS jumlah FROM surat_usaha WHERE status = 'Ditolak'");
         return $query->row_array();
     }
+
+    //jumlah admin desa
+    public function cJumMati() {
+        $this->db->select('warga.desa, COUNT(surat_kematian.id) as jumlah_kematian');
+        $this->db->from('warga');
+        $this->db->join('surat_kematian', 'warga.id_warga = surat_kematian.id_warga');
+        $this->db->where('kecamatan', $this->session->userdata('kecamatan'));
+        $this->db->group_by('desa');
+        $query = $this->db->get();
+        return $query->result_array();
+    }
+    
 }

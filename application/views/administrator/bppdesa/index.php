@@ -1,13 +1,7 @@
             <div class="main-content container-fluid">
-                <?php if(empty($_POST['des'])){ ?>
-                    <div class="page-title">
-                    <h3>Data Buku Pokok Pemakaman </h3>
+                <div class="page-title">
+                    <h3>Data Buku Pokok Pemakaman Desa <?=$_POST['des']?></h3>
                 </div>
-                <?php } else {?>
-                    <div class="page-title">
-                        <h3>Data Buku Pokok Pemakaman Desa <?=$_POST['des']?></h3>
-                    </div>
-                <?php } ?>
                 <section class="section">
                     <div class="row">
                         <div class="col-lg-12">
@@ -19,59 +13,40 @@
                                         <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#tambahData">Tambah Data</button>        
                                     </div>
                                     <?php } */?>
-                                            <div>
-                                                <form action="<?= base_url('dashboard') ?>" method="post">
-                                                    <button type="submit" onclick="" name="back" class="btn btn-danger">Kembali</button>													
-											    </form>   
-                                            </div>
-                                            <br>
-                                           
-                                            <form action="" method="POST">
-                                                <div class="row mb-4">
-                                                    <div class="col-md-auto">
-                                                        <div class="form-group">
-                                                            <label>Tanggal Meninggal Dari</label>
-                                                            <input type="date" name="from_date" value="" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-auto">
-                                                        <div class="form-group">
-                                                            <label>Tanggal Meninggal Sampai</label>
-                                                            <input type="date" name="to_date" value="" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    <?php if($this->session->userdata('role_id') != 4){ ?>
-                                                        <div class="col-md-auto">
-                                                            <div class="form-group">
-                                                                <label>Kecamatan</label>
-                                                                <input type="text" name="kec" value="" class="form-control">
-                                                            </div>
-                                                        </div>
-                                                        
-                                                    <?php } ?>
-                                                    <div class="col-md-auto">
-                                                        <div class="form-group">
-                                                            <label>Desa</label>
-                                                            <input type="text" name="des" value="" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="col-md-auto">
-                                                        <div class="form-group">
-                                                            <label>&nbsp;</label><br>
-                                                            <button type="submit" name="filter" class="btn btn-primary">Filter</button>
-                                                        </div>
-                                                    </div>
-                                                      
+                                    <div>
+                                        <form action="<?= base_url('dashboard') ?>" method="post">
+                                            <button type="submit" onclick="" name="back" class="btn btn-danger">Kembali</button>													
+										</form>   
+                                    </div>
+                                    <br>
+                                    <form action="" method="POST">
+                                        <div class="row mb-3">
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label>Tanggal Meninggal Dari</label>
+                                                    <input type="date" name="from_date" value="" class="form-control">
                                                 </div>
-                                            
-                                            </form>                    
-                                     
-                                            
-                                    
-
-                                    
-
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>Tanggal Meninggal Sampai</label>
+                                                    <input type="date" name="to_date" value="" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-auto">
+                                                <div class="form-group">
+                                                    <label>Desa</label>
+                                                    <input type="text" name="des" value="<?=$_POST['des']?>" class="form-control">
+                                                 </div>
+                                            </div>         
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>&nbsp;</label><br>
+                                                    <button type="submit" name="filter" class="btn btn-primary">Filter</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                     <div class="table-responsive overflow-auto">
                                         <table id="data-warga" class="table table-striped table-bordered text-center overflow-auto" style="width:100%">
                                             <thead>
@@ -96,7 +71,7 @@
                                                     foreach ($bpp as $data) {
                                                     ?>
                                                     
-                                                    <tr>
+                                                    <tr>base_convert
                                                             <td><?= $n ?></td>
                                                             <td><?= $data->nomor_surat ?></td>
                                                             <td><?= $data->nik_a ?></td>

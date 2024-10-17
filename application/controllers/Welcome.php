@@ -55,6 +55,8 @@ class Welcome extends CI_Controller
 			'ptskp'	=> $this->M_count->ptSkp(),
 			'ptsktm' => $this->M_count->ptSktm(),
 			'ptsku'	=> $this->M_count->ptSku(),
+			'cJumMati' => $this->M_count->cJumMati(),
+			
 		);
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);

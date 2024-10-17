@@ -110,6 +110,9 @@ $route['aksi-edit-bpp/(:any)'] = 'Administrator/DataBpp/Bpp/edit/$1';
 $route['detail-bpp/(:any)'] = 'Administrator/DataBpp/Bpp/detail/$1';
 $route['delete-bpp/(:any)'] = 'Administrator/DataBpp/Bpp/delete/$1';
 
+//data BPP per Desa
+$route['data-bpp-desa'] = 'Administrator/DataBppDesa/BppDesa/index';
+
 // data skkt
 $route['data-skkt'] = 'Administrator/DataSkkt/Skkt/index';
 $route['tambah-data-skkt'] = 'Administrator/DataSkkt/Skkt/index_tambah';

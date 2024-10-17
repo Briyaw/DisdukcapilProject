@@ -1,5 +1,5 @@
 <?php
-class Bpp extends CI_Controller
+class BppDesa extends CI_Controller
 {
 
 	public function __construct()
@@ -13,48 +13,31 @@ class Bpp extends CI_Controller
 	public function index()
 	{	
 		if($this->input->post() == NULL){
-			
-			if($this->session->userdata('role_id') == 4){
-				$kecamatan = $this->session->userdata('kecamatan');
-				$data = array(
-					'title' => 'Data Buku Pokok Pemakaman',
-					'bpp' => $this->M_bpp->getKecBpp($kecamatan)
-				);
-			}
-			else{
-				$data = array(
-					'title' => 'Data Buku Pokok Pemakaman',
-					'bpp' => $this->M_bpp->getBpp()
-				);
-			}
-			
+			$kecamatan = $this->session->userdata('kecamatan');
+			$data = array(
+				'title' => 'Data Buku Pokok Pemakaman',
+				'bpp' => $this->M_bpp->getKecBpp($kecamatan)
+			);
+
 		}
 		else{
 			$from_date = $this->input->post('from_date');
 			$to_date = $this->input->post('to_date');
-			$kec = $this->input->post('kec');
 			$des = $this->input->post('des');
 			// Convert dates to proper format
             $from_date = date('Y-m-d', strtotime($from_date));
             $to_date = date('Y-m-d', strtotime($to_date));
-			if($this->session->userdata('role_id') == 4){	
-				$kecamatan = $this->session->userdata('kecamatan');
-				$data = array(
-					'title' => 'Data Buku Pokok Pemakaman',
-					'bpp' => $this->M_bpp->getDateKecBpp($from_date, $to_date, $kecamatan, $des)
-				);
-			}
-			else{
-				$data = array(
-					'title' => 'Data Buku Pokok Pemakaman',
-					'bpp' => $this->M_bpp->getDateBpp($from_date, $to_date, $kec, $des)
-				);
-			}
+
+			$kecamatan = $this->session->userdata('kecamatan');
+			$data = array(
+				'title' => 'Data Buku Pokok Pemakaman',
+				'bpp' => $this->M_bpp->getDateKecBpp($from_date, $to_date, $kecamatan, $des)
+			);
 		}
 
 		$this->load->view('layout/header', $data);
 		$this->load->view('layout/sidebar', $data);
-		$this->load->view('administrator/bpp/index', $data);
+		$this->load->view('administrator/bppdesa/index', $data);
 		$this->load->view('layout/footer', $data);
 	}
 	
@@ -85,22 +68,12 @@ class Bpp extends CI_Controller
 			$from_date = $this->input->get('from_date');
 			$to_date = $this->input->get('to_date');
 			$des = $this->input->get('des');
+			$kecamatan = $this->session->userdata('kecamatan');		
+			$data = array(
+				'title' => 'Cetak Surat Keterangan Kematian',
+				'data' => $this->M_bpp->cetakDateBpp($from_date, $to_date, $kecamatan, $des)
+			);
 
-			if($this->session->userdata('role_id') == 4){
-				$kecamatan = $this->session->userdata('kecamatan');		
-				$data = array(
-					'title' => 'Cetak Surat Keterangan Kematian',
-					'data' => $this->M_bpp->cetakDateBpp($from_date, $to_date, $kecamatan, $des)
-				);
-			}
-			else{
-				$kec = $this->input->get('kec');
-				$data = array(
-					'title' => 'Cetak Surat Keterangan Kematian',
-					'data' => $this->M_bpp->cetakDateBpp($from_date, $to_date, $kec, $des)
-				);
-			}
-			
 		}
         $this->load->view('administrator/bpp/print.php', $data);
     }

@@ -312,56 +312,40 @@
             						</div>
             					</div>
 
-
-
-                                <div class="row mb-4">
-                            <div class="col-lg-12">
-                                <div class="card">
-                                    <div class="card-header bg-info">
-                                        <h5 class="text-dark text-center"><b>DATA PERMOHONAN SURAT</b></h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row p-2">
-                                            <div class="col-md-4">
-                                                <div class="card">
-                                                    <div class="card-header bg-warning">
-                                                        <h5 class="text-dark font-bold text-center">MENUNGGU VERIFIKASI</h5>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h1 class="text-center p-3 text-dark font-bold"><?= $mvskd['jumlah'] + $mvsk['jumlah'] + $mvskk['jumlah'] + $mvskp['jumlah'] + $mvsktm['jumlah'] + $mvsku['jumlah']; ?></h1>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="card">
-                                                    <div class="card-header bg-success">
-                                                        <h5 class="text-dark font-bold text-center">PERMOHONAN DITERIMA</h5>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h1 class="text-center p-3 text-dark font-bold"><?= $pdskd['jumlah'] + $pdsk['jumlah'] + $pdskk['jumlah'] + $pdskp['jumlah'] + $pdsktm['jumlah'] + $pdsku['jumlah']; ?></h1>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-4">
-                                                <div class="card">
-                                                    <div class="card-header bg-danger">
-                                                        <h5 class="text-dark font-bold text-center">PERMOHONAN DITOLAK</h5>
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <h1 class="text-center p-3 text-dark font-bold"><?= $ptskd['jumlah'] + $ptsk['jumlah'] + $ptskk['jumlah'] + $ptskp['jumlah'] + $ptsktm['jumlah'] + $ptsku['jumlah']; ?></h1>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+								<div class="card">
+            						<div class="card-body bg-warning">
+            							<h4 class="font-bold text-white text-center">JUMLAH DATA KEMATIAN PER DESA</h4>
+            						</div>
+            					</div>
+								
+                                <div class="row mb-2">
+									<?php $n = 0;
+										foreach ($cJumMati as $row) { ?>
+										
+									<div class="col d-flex flex-wrap justify-content-center">
+										<div class="card card-statistic">
+											<div class="card-body p-0">
+												<div class='d-flex justify-content-between'>
+													<form action="<?= base_url('data-bpp-desa') ?>" method="post">
+														<input type="hidden" name="des" value="<?= $row['desa'] ?>">
+														<button type="submit" onclick="fillDesaInput('<?= $row['desa'] ?>')" class="btn btn-danger"> 
+															<h3 class='card-title'>DESA <?= $row['desa'] ?></h3>
+														</button>
+													</form>														
+												</div>
+												<div class="card-right d-flex align-items-center p-3 justify-content-center">
+													<p><?= $row['jumlah_kematian'] ?> <span>Data</span></p>
+												</div>
+														
+													<!-- <div class="chart-wrapper">
+													<canvas id="canvas1" style="height:100px !important"></canvas>
+													</div> -->
+											</div>
+										</div>
+									</div>
+									<?php $n++; } ?>
+								</div>
+								
 
 
                         
@@ -371,3 +355,5 @@
 
             	</section>
             </div>
+
+			
