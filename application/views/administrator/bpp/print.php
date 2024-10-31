@@ -8,52 +8,36 @@
     <title><?= $title ?></title>
     <link rel="stylesheet" href="<?= base_url(); ?>./assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url(); ?>./assets/css/printlandscape.css">
-    
-    <style>
-        .ukuranfont{
-            font-size : 10px;
-        }
-    </style>
 </head>
-
 
 <body>
     <div class="container mt-3 page">
         <div class="sub-page">
-            <center>
-                <table width="100%">
-                    <tr>
-                        <td>
-                            <center>
-                                <h1 style='text-transform:uppercase; font-size:18px' class="ms-5">Buku Pokok Pemakaman</h3>
-                                <div class="row justify-content-md-center">
-                                    <div class="col-lg-2">
-                                        <h2 style='text-transform:uppercase; font-size:12px' class="ms-5">Dari : </h6>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <h2  style='text-transform:uppercase; font-size:12px' class="ms-5">Sampai : </h6>    
-                                    </div>
-                                </div>
-                            </center>
-                        </td>
-                    </tr>
-                            
-                        
-                </table>
-            </center>
-            <?php $n=1;
-            foreach ($data as $d) { 
-                if ($n == 2) break; ?>
-            
-            <div class ="ukuranfont">
+            <h1 class="text-center text-uppercase" style="font-size:22px;" >Buku Pokok Pemakaman</h1>
+            <div>
                 <div>
-                    <div>
-                        Desa : <?= $d->desa?>
-                    </div>
-                    <div>
-                        Kecamatan : <?= $d->kecamatan ?>
-                    </div>
+                    <?php
+                        $from_date = date('d-m-Y', strtotime($_GET['from_date'])); 
+                        $to_date = date('d-m-Y', strtotime($_GET['to_date'])) 
+                    ?>
+                    Tanggal : <?=$from_date?> s.d  <?=$to_date?>
                 </div>
+                    
+                    <div>
+                        <?php if(($this->session->userdata('role_id')) == 4){ ?>
+                             Kecamatan : <?= $this->session->userdata('kecamatan') ?>  <?php }
+                        else{?> 
+                            Kecamatan : <?=$_GET['kec']?>  <?php } ?>
+                    </div>
+                    <div>
+                        Desa : <?=$_GET['des']?>
+                    </div>
+            </div>
+            
+            <?php $n=1;
+            foreach ($data as $d) { ?>
+            
+            <div>
                 <?php $n++; } ?>
                 <br>
                 <table class="table table-bordered ukuranfont ">
@@ -86,13 +70,13 @@
                             <td><?= $n ?></td>
                             <td><?= $d->nama_alm ?></td>
                             <td><?= $d->nik_a ?></td>
-                            <td><?= $d->tempat_lahir_a ?>, <?= $d->tanggal_meninggal ?></td>
+                            <td><?= $d->tempat_lahir_a ?>, <?= date('d-m-Y', strtotime($d->tanggal_lahir_a)) ?></td>
                             <td><?= $d->jekel_a ?></td>
-                            <td><?= $d->tempat_meninggal?>, <?= $d->tanggal_meninggal?></td>
+                            <td><?= $d->tempat_meninggal?>, <?= date('d-m-Y', strtotime($d->tanggal_meninggal))?></td>
                             <td>-</td>
                             <td><?= $d->nama_p?></td>
                             <td><?= $d->nik_p ?></td>
-                            <td><?= $d->nama_p ?>, <?= $d->nohp_p ?></td>
+                            <td><?= $d->nama_p ?> (<?= $d->nohp_p ?>)</td>
                             <td><?= $d->alamat_p ?></td>
                             <td><?= $d->sebab_meninggal ?></td>
                             <td><?= $d->tempat_pemakaman ?></td>

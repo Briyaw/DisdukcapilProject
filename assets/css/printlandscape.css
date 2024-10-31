@@ -4,16 +4,16 @@ body {
     margin: 0;
     padding: 0;
     background-color: white;
-    font: 12pt "Tahoma";
+    font: 8pt "Tahoma";
     color: black;
     font-family: Arial;
 }
 
 .page {
-    width: 297mm; /* Adjust width to 297mm for landscape */
-    min-height: 210mm; /* Adjust height to 210mm for landscape */
+    min-width: 377mm;
+    height: 210mm; /* Adjust height to 210mm for landscape */
     padding: 10mm;
-    margin: 10mm auto;
+    margin: auto;
     border: 1px #D3D3D3 solid;
     border-radius: 5px;
     background: white;
@@ -53,3 +53,4 @@ body {
 hr {
     border: 1px solid #000;
 }
+

@@ -1,8 +1,9 @@
             <div class="main-content container-fluid">
             	<div class="page-title">
-            		<h3>Dashboard</h3>
-            		<h5 class="text-subtitle text-muted text-bold">Selamat Datang di Aplikasi Melati Asri (Mencatat Laporan Kematian Terintegrasi) </h5>
-                    <h5 class="font-bold text-white"><?= date('Y-m-d H:i:s'); ?></h5>
+            		<h1>Dashboard</h1>
+					<br>
+            		<?php /*<h5 class="text-subtitle text-muted text-bold">Selamat Datang di Aplikasi Melati Asri (Mencatat Laporan Kematian Terintegrasi) </h5>
+                    <h5 class="font-bold text-white"><?= date('Y-m-d H:i:s'); ?></h5>*/ ?>
             	</div>
             	<section class="section">
             		<?php if ($this->session->userdata('role_id') == 1) { ?>
@@ -63,7 +64,7 @@
             				<div class="col-lg-12">
             					<div class="card">
             						<div class="card-header bg-info">
-            							<h5 class="text-dark text-center"><b>DATA PERMOHONAN SURAT</b></h5>
+            							<h5 class="text-white text-center"><b>DATA PERMOHONAN SURAT</b></h5>
             						</div>
             						<div class="card-body">
             							<div class="row p-2">
@@ -113,7 +114,7 @@
             				<div class="col-lg-12">
             					<div class="card">
             						<div class="card-body bg-success">
-            							<h4 class="font-bold text-white">APLIKASI MELATI ASRI (Mencatat Laporan Kematian Terintegrasi)</h4>
+            							<h3 class="font-bold text-white">SELAMAT DATANG DI APLIKASI MELATI ASRI (Mencatat Laporan Kematian Terintegrasi)</h3>
             							<h5 class="font-bold text-white"><?= date('Y-m-d H:i:s'); ?></h5>
             						</div>
             					</div>
@@ -123,7 +124,7 @@
             				<div class="col-lg-12">
             					<div class="card">
             						<div class="card-header bg-info">
-            							<h5 class="text-dark text-center"><b>DATA PERMOHONAN SURAT</b></h5>
+            							<h5 class="text-white text-center"><b>DATA PERMOHONAN SURAT</b></h5>
             						</div>
             						<div class="card-body">
             							<div class="row p-2">
@@ -172,13 +173,13 @@
             				<div class="col-lg-12">
             					<div class="card">
             						<div class="card-body bg-success">
-            							<h4 class="font-bold text-white">SELAMAT DATANG DI APLIKASI MELATI ASRI (Mencatat Laporan Kematian Terintegrasi)</h4>
+            							<h3 class="font-bold text-white">SELAMAT DATANG DI APLIKASI MELATI ASRI (Mencatat Laporan Kematian Terintegrasi)</h3>
             							<h5 class="font-bold text-white"><?= date('Y-m-d H:i:s'); ?></h5>
             						</div>
             					</div>
             					<div class="card mt-2">
             						<div class="card-body bg-primary">
-            							<h2 class="text-center font-bold text-dark">PROSEDUR PERMOHONAN SURAT</h1>
+            							<h2 class="text-center font-bold text-white">PROSEDUR PERMOHONAN SURAT</h1>
             								<hr>
             								<div class="row">
             									<div class="col-sm-6">
@@ -219,7 +220,7 @@
                             <div class="col-lg-12">
                                 <div class="card">
                                     <div class="card-header bg-info">
-                                        <h5 class="text-dark text-center"><b>DATA PERMOHONAN SURAT</b></h5>
+                                        <h5 class="text-white text-center"><b>DATA PERMOHONAN SURAT</b></h5>
                                     </div>
                                     <div class="card-body">
                                         <div class="row p-2">
@@ -271,13 +272,13 @@
             				<div class="col-lg-12">
             					<div class="card">
             						<div class="card-body bg-success">
-            							<h4 class="font-bold text-white">SELAMAT DATANG DI APLIKASI MELATI ASRI (Mencatat Laporan Kematian Terintegrasi)</h4>
+            							<h3 class="font-bold text-white">SELAMAT DATANG DI APLIKASI MELATI ASRI (Mencatat Laporan Kematian Terintegrasi)</h3>
             							<h5 class="font-bold text-white"><?= date('Y-m-d H:i:s'); ?></h5>
             						</div>
             					</div>
             					<div class="card mt-2">
             						<div class="card-body bg-primary">
-            							<h2 class="text-center font-bold text-dark">PROSEDUR PERMOHONAN SURAT</h1>
+            							<h2 class="text-center font-bold text-white">PROSEDUR PERMOHONAN SURAT</h1>
             								<hr>
             								<div class="row">
             									<div class="col-sm-6">
